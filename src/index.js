@@ -5,6 +5,8 @@ import './index.css';
 
 
 import App from './App';
+import ErrorCheck from './Error';
+
 
 import * as serviceWorker from './serviceWorker';
 
@@ -28,7 +30,9 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <ErrorCheck>
+        <App />
+      </ErrorCheck>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

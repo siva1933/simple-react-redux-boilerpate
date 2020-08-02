@@ -18,7 +18,7 @@ class ErrorCheck extends React.Component {
   }
 
   render() {
-    if (error) {
+    if (this.state.error) {
       return <div>
         <p>
           <b>

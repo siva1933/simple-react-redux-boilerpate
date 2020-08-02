@@ -19,7 +19,7 @@ function App({ increment, decrement, count }) {
         decrement()
       }}>-</button>
 
-      {count}
+      {count >5?new Error("Crashed"):count}
 
     </div>
   );
