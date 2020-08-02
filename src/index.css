@@ -13,11 +13,12 @@ code {
 }
 
 .bg {
-  background-image: url("./assets/Images/Illustration2.png"), url("./assets/Images/Illustration1.png");
-  background-repeat: no-repeat, no-repeat;
-  background-attachment: fixed, fixed;
+  background-image: url("./assets/Images/Illustration2.png"), url("./assets/Images/Illustration1.png"),
+    url("./assets/Images/Illustration3.png"), url("./assets/Images/Illustration4.png");
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed, fixed;
   /* background-size: cover; */
-  background-position: 60rem -7rem, left bottom;
+  background-position: 60rem -7rem, -7rem 20rem, left top, 75rem 27rem;
 }
 
 .default-bg-color {
