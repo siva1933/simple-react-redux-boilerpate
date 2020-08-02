@@ -6,7 +6,6 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-import Favorite from '@material-ui/icons/FavoriteBorderOutlined';
 import FavoriteImg from '../assets/Icons/feather-heart.png';
 import Clock from '../assets/Icons/feather-clock.png';
 import FavoriteImgColor from '../assets/Icons/feather-heart-color.png';
@@ -37,10 +36,10 @@ export default function ImageCard({ data, idx }) {
             <div className="d-flex space-between">
               <div>
                 <div>{name}</div>
-                <div><img src={Clock} /> <span className="fs-14">14 mins</span></div>
+                <div><img src={Clock} alt='clock' /> <span className="fs-14">14 mins</span></div>
               </div>
               <div>
-                {idx % 3 === 2 ? <img src={FavoriteImgColor} /> : <img src={FavoriteImg} />}
+                {idx % 3 === 2 ? <img src={FavoriteImgColor} alt="fav"/> : <img src={FavoriteImg} alt="fav" />}
               </div>
             </div>
           </Typography>

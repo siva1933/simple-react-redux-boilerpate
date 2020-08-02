@@ -14,13 +14,13 @@ function App({ recipies, getRecipies }) {
 
   React.useEffect(() => {
     getRecipies()
-  }, [])
+  }, [getRecipies])
 
   return (
     <div>
       <Header />
 
-      <RecipiesList data={recipies} />
+      <RecipiesList data={recipies.data} loading={recipies.loading} />
     </div>
   );
 }

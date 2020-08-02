@@ -18,10 +18,13 @@ const useStyles = makeStyles((theme) => ({
 
 
 const RecipiesList = (props) => {
-  const [spacing, setSpacing] = React.useState(1);
   const classes = useStyles();
 
-  const { data = [] } = props
+
+
+  const { data = [], loading = true} = props
+
+
   return <div className="container pt-4">
     <div className="d-flex justify-content-end">
       <div className="d-flex flex-direction-col justify-content-end head">
@@ -30,20 +33,22 @@ const RecipiesList = (props) => {
       </div>
     </div>
 
-    <div className="pt-1">
-      <Grid container className={classes.root} spacing={2}>
-        {/* <Grid item xs={12}> */}
-        <Grid container justify="start" spacing={spacing} xs={12}>
-          {data.map((value, idx) => (
-            <Grid key={value} xs={3} item>
-              <ImageCard data={value} idx={idx} />
-            </Grid>
-          ))}
-        </Grid>
-        {/* </Grid> */}
-      </Grid>
+    {loading ? <div className="h-100 w-100" style={{height: '66.5vh'}}>Loading...</div> : data.length === 0 ? <div style={{height: '66.5vh'}} className="h-100 w-100">No Data</div> :
 
-    </div>
+      <div className="pt-1">
+        <Grid container className={classes.root} spacing={2}>
+          {/* <Grid item xs={12}> */}
+          <Grid container justify="start" spacing={1} xs={12}>
+            {data.map((value, idx) => (
+              <Grid key={value} xs={3} item>
+                <ImageCard data={value} idx={idx} />
+              </Grid>
+            ))}
+          </Grid>
+          {/* </Grid> */}
+        </Grid>
+
+      </div>}
   </div>
 
 }
