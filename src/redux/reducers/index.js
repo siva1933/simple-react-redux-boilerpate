@@ -1,14 +1,12 @@
-import { INCREMENT, DECREMENT } from "../types";
+import { GET_RECIPIES } from "../types";
 
 
-function reducer(initialState = { count: 0 }, action) {
+function reducer(initialState = {}, action) {
   switch (action.type) {
-    case INCREMENT:
-      return { count: initialState.count + 1 };
-    case DECREMENT:
-      return { count: initialState.count - 1 };
+    case GET_RECIPIES:
+      return { recipies: action.payload };
     default:
-      return { count: 0 }
+      return initialState
   }
 }
 

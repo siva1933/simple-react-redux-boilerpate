@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
+import thunk from "redux-thunk"
 import './index.css';
 
 
@@ -13,10 +14,10 @@ import * as serviceWorker from './serviceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import reducer from './redux/reducers';
 
-const thunk = store => next => action =>
-  typeof action === 'function'
-    ? action(store.dispatch, store.getState)
-    : next(action)
+// const thunk = store => next => action =>
+//   typeof action === 'function'
+//     ? action(store.dispatch, store.getState)
+//     : next(action)
 
 const store = createStore(
   combineReducers({
@@ -31,7 +32,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <ErrorCheck>
-        <App />
+        <div className="bg bg-2 default-bg-color h-100">
+          <App />
+        </div>
       </ErrorCheck>
     </Provider>
   </React.StrictMode>,

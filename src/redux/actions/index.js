@@ -1,13 +1,32 @@
-import { INCREMENT, DECREMENT } from "../types"
+import { GET_RECIPIES, GET_RECIPE } from "../types"
 
-export const increment = () => {
-  return {
-    type: INCREMENT
+import axios from "../../config/axios"
+
+export const getRecipies = () => {
+  return async (dispatch) => {
+
+    let response = await axios.get("/recipe")
+
+    if (response && response.status === 200) {
+      dispatch({
+        type: GET_RECIPIES,
+        payload: response.data
+      })
+    } else {
+      dispatch({
+        type: GET_RECIPIES,
+        payload: []
+      })
+    }
   }
 }
 
-export const decrement = () => {
+export const getRecipy = async (id) => {
+
+  let response = await axios.get(`/recipe/${id}`)
+
   return {
-    type: DECREMENT
+    type: GET_RECIPE,
+    payload: response
   }
 }

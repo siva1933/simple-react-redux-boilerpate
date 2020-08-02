@@ -1,13 +1,105 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* height: 100vh; */
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.bg {
+  background-image: url("./assets/Images/Illustration2.png"), url("./assets/Images/Illustration1.png");
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  /* background-size: cover; */
+  background-position: 60rem -7rem, left bottom;
+}
+
+.default-bg-color {
+  background-color: #f0f0f0;
+}
+.w-100 {
+  width: 100%;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+.search-input {
+  padding-left: 15px;
+  border: none;
+  background: none;
+  height: 33px;
+  width: 90%;
+}
+
+.container {
+  padding: 0 15rem;
+}
+
+.pt-1 {
+  padding-top: 1rem;
+}
+
+.pt-4 {
+  padding-top: 4rem;
+}
+
+.search button {
+  background-color: #fff;
+  width: 40px;
+  height: 40px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.head label {
+  display: block;
+}
+
+.flex-direction-col {
+  flex-direction: column;
+}
+
+@font-face {
+  font-family: Metropolis-ExtraBold;
+  src: url(./assets/Fonts/Metropolis/Metropolis-ExtraBold.otf);
+}
+
+@font-face {
+  font-family: Metropolis-ExtraLight;
+  src: url(./assets/Fonts/Metropolis/Metropolis-ExtraLight.otf);
+}
+
+.head .title {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: Metropolis-ExtraBold;
+}
+
+.head .heading {
+  font-size: 14px;
+  text-align: right;
+  font-weight: 600;
+  font-family: Metropolis-ExtraLight;
+  color: #cdcdcd;
 }

@@ -4,37 +4,36 @@ import './App.css';
 
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import { increment, decrement } from './redux/actions';
+import { getRecipies } from './redux/actions';
+import Header from './components/Header';
+import RecipiesList from './components/RecipiesListPage';
 
 
 
-function App({ increment, decrement, count }) {
+function App({ recipies, getRecipies }) {
+
+  React.useEffect(() => {
+    getRecipies()
+  }, [])
 
   return (
-    <div className="App">
-      <button onClick={() => {
-        increment()
-      }}>+</button>
-      <button onClick={() => {
-        decrement()
-      }}>-</button>
+    <div>
+      <Header />
 
-      {count >5?new Error("Crashed"):count}
-
+      <RecipiesList data={recipies} />
     </div>
   );
 }
 
 const mapStateToProps = (state) => {
-  
+  console.log(state)
   return {
-    count: state.reducer.count
+    recipies: state.reducer.recipies
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    increment,
-    decrement
+    getRecipies
   }, dispatch)
 }
 export default connect(mapStateToProps, mapDispatchToProps)(App);
